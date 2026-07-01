@@ -1,3 +1,5 @@
+import {Estado} from "./estado";
+
 export interface Cliente{
     idCliente:number;
     idUsuario: number;
@@ -11,5 +13,3 @@ export interface Cliente{
     fecha:Date;
     estado:Estado;
 }
-
-export type Estado = "Activo"|"Inactivo";
