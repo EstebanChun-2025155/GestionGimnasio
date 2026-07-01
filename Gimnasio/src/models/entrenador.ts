@@ -1,3 +1,5 @@
+import {Estado} from "./estado";
+
 export interface Entrenador{
     idEntrenador:number;
     idUsuario:number;
@@ -9,5 +11,3 @@ export interface Entrenador{
     especialidad:string;
     estado:Estado
 }
-
-export type Estado = "activo"|"inactivo";
