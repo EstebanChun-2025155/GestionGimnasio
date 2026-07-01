@@ -1,3 +1,5 @@
+import {Proceso} from "./estado";
+
 export interface PlanNutricional{
     idPlanNutricional:number;
     idCliente:number;
@@ -6,7 +8,6 @@ export interface PlanNutricional{
     calorias:string;
     indicaciones:string;
     plazo:number;
-    estado:Estado;
+    estado:Proceso;
 }
 
-export type Estado = "En proceso"|"Finalizada";
