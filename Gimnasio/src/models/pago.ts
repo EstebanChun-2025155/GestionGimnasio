@@ -1,21 +1,14 @@
+import {MetodoPago} from "./metodoPago";
+import {EstadoPago} from "./estadoPago";
+
 export interface Pago{
     idPago:number;
     idCliente:number;
     idMembresia:number;
     monto:number;
-    metodo:MetodoPago;
     fecha_pago:Date;
-    estado:EstadoPago;
-    referencia:string
+    referencia:string;
+    metodoPago:MetodoPago;
+    estadoPago:EstadoPago;
 }
 
-enum MetodoPago {
-  TARJETA = "tarjeta",
-  TRANSFERENCIA = "transferencia"
-}
-
-enum EstadoPago {
-  PAGADO = "pagado",
-  PENDIENTE = "pendiente",
-  VENCIDO = "vencido"
-}
