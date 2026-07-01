@@ -1,10 +1,11 @@
+import {estado} from "./estado";
+
 export interface Membresia{
     idMembresia:number;
     nombre:string;
     descripcion:string;
     plazo:number;
     precio:number;
-    estado:Estado;
+    estado:estado;
 }
 
-export type Estado = "activa"|"inactiva";
