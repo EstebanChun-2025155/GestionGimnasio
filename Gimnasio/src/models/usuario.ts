@@ -1,3 +1,6 @@
+import {Estado} from "./estado";
+import {Rol} from "./rol";
+
 export interface Usuario{
     idUsuario:number,
     username:string,
@@ -7,10 +10,3 @@ export interface Usuario{
     fechaIngreso:Date
 }
 
-export type Estado = "Activo"|"Inactivo";
-
-export enum Rol{
-    ADMIN = "Admin",
-    CLIENTE = "Cliente",
-    ENTRENADOR = "Entrenador"
-}
