@@ -87,24 +87,6 @@ export function asignarEstadoSeguimiento(estado: string): EstadoSeguimiento {
     );
 }
 
-export function validarEstadoPersona(estado: string): boolean {
-    const valor = estado.trim().toLowerCase();
-
-    return valor === "activo" || valor === "inactivo";
-}
-
-export function validarEstadoHabilitacion(estado: string): boolean {
-    const valor = estado.trim().toLowerCase();
-
-    return valor === "activa" || valor === "inactiva";
-}
-
-export function validarEstadoSeguimiento(estado: string): boolean {
-    const valor = estado.trim().toLowerCase();
-
-    return valor === "activa" || valor === "finalizada";
-}
-
 export function validarFechaIngreso(fecha: Date): boolean {
     const fechaMinima = new Date("2000-01-01");
     const fechaActual = new Date();
