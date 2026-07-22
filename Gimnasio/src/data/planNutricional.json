@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "idCliente": 1,
+    "caloriasDiarias": "2200 kcal",
+    "objetivo": "Ganancia muscular",
+    "estado": "activa"
+  },
+  {
+    "id": 2,
+    "idCliente": 2,
+    "caloriasDiarias": "1800 kcal",
+    "objetivo": "Pérdida de grasa",
+    "estado": "activa"
+  },
+  {
+    "id": 3,
+    "idCliente": 3,
+    "caloriasDiarias": "2500 kcal",
+    "objetivo": "Mantenimiento",
+    "estado": "finalizada"
+  }
+]

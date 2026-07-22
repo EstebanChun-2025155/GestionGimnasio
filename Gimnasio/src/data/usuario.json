@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Administrador",
+    "correo": "admin@gmail.com",
+    "contrasena": "Admin123",
+    "rol": "admin",
+    "estado": "activo"
+  },
+  {
+    "id": 2,
+    "nombre": "Entrenador",
+    "correo": "trainer@gmail.com",
+    "contrasena": "Trainer123",
+    "rol": "entrenador",
+    "estado": "activo"
+  },
+  {
+    "id": 3,
+    "nombre": "Recepción",
+    "correo": "recepcion@hotmail.com",
+    "contrasena": "Recepcion123",
+    "rol": "recepcionista",
+    "estado": "inactivo"
+  }
+]

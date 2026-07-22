@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "idCliente": 1,
+    "monto": 250,
+    "fechaPago": "2026-07-22",
+    "metodoPago": "tarjeta"
+  },
+  {
+    "id": 2,
+    "idCliente": 2,
+    "monto": 650,
+    "fechaPago": "2026-07-22",
+    "metodoPago": "transferencia"
+  },
+  {
+    "id": 3,
+    "idCliente": 3,
+    "monto": 2200,
+    "fechaPago": "2026-07-22",
+    "metodoPago": "tarjeta"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "idCliente": 1,
+    "fecha": "2026-07-22",
+    "horaEntrada": "07:00",
+    "horaSalida": "08:30",
+    "observaciones": "Entrenamiento completo"
+  },
+  {
+    "id": 2,
+    "idCliente": 2,
+    "fecha": "2026-07-22",
+    "horaEntrada": "10:15",
+    "horaSalida": "11:20",
+    "observaciones": "Sesión de cardio"
+  },
+  {
+    "id": 3,
+    "idCliente": 3,
+    "fecha": "2026-07-22",
+    "horaEntrada": "18:00",
+    "horaSalida": "19:15",
+    "observaciones": "Entrenamiento de fuerza"
+  }
+]

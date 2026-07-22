@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mensual",
+    "duracion": 30,
+    "precio": 250,
+    "estado": "activa"
+  },
+  {
+    "id": 2,
+    "nombre": "Trimestral",
+    "duracion": 90,
+    "precio": 650,
+    "estado": "activa"
+  },
+  {
+    "id": 3,
+    "nombre": "Anual",
+    "duracion": 365,
+    "precio": 2200,
+    "estado": "inactiva"
+  }
+]
