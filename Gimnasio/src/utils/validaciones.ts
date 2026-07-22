@@ -54,19 +54,6 @@ export function validarDireccion(direccion: string): boolean {
     return validarTexto(direccion, 5, 150);
 }
 
-export function validarEstado(valor: string): boolean {
-    const estadoIngresado = valor.trim().toLowerCase();
-
-    return (
-        estadoIngresado === "activo" ||
-        estadoIngresado === "inactivo" ||
-        estadoIngresado === "activa" ||
-        estadoIngresado === "inactiva" ||
-        estadoIngresado === "en proceso" ||
-        estadoIngresado === "finalizada"
-    );
-}
-
 export function asignarEstadoPersona(estado: string): EstadoPersona {
     const valor = estado.trim().toLowerCase();
 
@@ -75,6 +62,28 @@ export function asignarEstadoPersona(estado: string): EstadoPersona {
 
     throw new Error(
         "Estado incorrecto. Solo se permite: activo o inactivo"
+    );
+}
+
+export function asignarEstadoHabilitacion(estado: string): EstadoHabilitacion {
+    const valor = estado.trim().toLowerCase();
+
+    if (valor === "activa") return "activa";
+    if (valor === "inactiva") return "inactiva";
+
+    throw new Error(
+        "Estado incorrecto. Solo se permite: activa o inactiva"
+    );
+}
+
+export function asignarEstadoSeguimiento(estado: string): EstadoSeguimiento {
+    const valor = estado.trim().toLowerCase();
+
+    if (valor === "activa") return "activa";
+    if (valor === "finalizada") return "finalizada";
+
+    throw new Error(
+        "Estado incorrecto. Solo se permite: activa o finalizada"
     );
 }
 
@@ -94,17 +103,6 @@ export function validarEstadoSeguimiento(estado: string): boolean {
     const valor = estado.trim().toLowerCase();
 
     return valor === "activa" || valor === "finalizada";
-}
-
-export function asignarEstadoSeguimiento(estado: string): EstadoSeguimiento {
-    const valor = estado.trim().toLowerCase();
-
-    if (valor === "activa") return "activa";
-    if (valor === "finalizada") return "finalizada";
-
-    throw new Error(
-        "Estado incorrecto. Solo se permite: activa o finalizada"
-    );
 }
 
 export function validarFechaIngreso(fecha: Date): boolean {
