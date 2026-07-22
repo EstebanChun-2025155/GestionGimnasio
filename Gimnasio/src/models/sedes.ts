@@ -1,10 +1,10 @@
-import {estado} from "./estado";
+import {EstadoHabilitacion} from "./estado";
 
 export interface Sedes{
     idSede:number;
     nombre:string;
     direccion:string;
     telefono:number;
-    estado:estado;
+    estado:EstadoHabilitacion;
 }
 

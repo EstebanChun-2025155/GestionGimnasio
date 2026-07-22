@@ -1,4 +1,4 @@
-import {Estado} from "./estado";
+import {EstadoPersona} from "./estado";
 
 export interface Cliente{
     idCliente:number;
@@ -11,5 +11,5 @@ export interface Cliente{
     telefono:number;
     correo:string;
     fecha:Date;
-    estado:Estado;
+    estado:EstadoPersona;
 }

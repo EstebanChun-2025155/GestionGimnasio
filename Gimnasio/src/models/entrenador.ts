@@ -1,4 +1,4 @@
-import {Estado} from "./estado";
+import {EstadoPersona} from "./estado";
 
 export interface Entrenador{
     idEntrenador:number;
@@ -6,8 +6,8 @@ export interface Entrenador{
     idSede:number;
     nombre:string;
     apellido:string;
-    dpi:number;
+    dpi:string;
     telefono:number;
     especialidad:string;
-    estado:Estado
+    estado:EstadoPersona
 }

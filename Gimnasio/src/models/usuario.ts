@@ -1,4 +1,4 @@
-import {Estado} from "./estado";
+import {EstadoPersona} from "./estado";
 import {Rol} from "./rol";
 
 export interface Usuario{
@@ -6,7 +6,7 @@ export interface Usuario{
     username:string,
     password:string,
     rol:Rol,
-    estado:Estado
+    estado:EstadoPersona
     fechaIngreso:Date
 }
 

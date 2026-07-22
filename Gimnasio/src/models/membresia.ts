@@ -1,4 +1,4 @@
-import {estado} from "./estado";
+import {EstadoHabilitacion} from "./estado";
 
 export interface Membresia{
     idMembresia:number;
@@ -6,6 +6,6 @@ export interface Membresia{
     descripcion:string;
     plazo:number;
     precio:number;
-    estado:estado;
+    estado:EstadoHabilitacion;
 }
 

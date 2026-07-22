@@ -1,4 +1,4 @@
-import {Proceso} from "./estado";
+import {EstadoSeguimiento} from "./estado";
 
 export interface PlanNutricional{
     idPlanNutricional:number;
@@ -8,6 +8,6 @@ export interface PlanNutricional{
     calorias:string;
     indicaciones:string;
     plazo:number;
-    estado:Proceso;
+    estado:EstadoSeguimiento;
 }
 

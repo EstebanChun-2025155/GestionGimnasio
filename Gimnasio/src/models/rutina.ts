@@ -1,4 +1,4 @@
-import {Proceso} from "./estado";
+import {EstadoSeguimiento} from "./estado";
 
 export interface Rutina{
     idRutina:number;
@@ -6,6 +6,6 @@ export interface Rutina{
     idEntrenador:number;
     nombre:string;
     objetivo:string;
-    estado:Proceso;
+    estado:EstadoSeguimiento;
 }
 
