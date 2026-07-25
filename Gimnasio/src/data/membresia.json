@@ -2,22 +2,25 @@
   {
     "id": 1,
     "nombre": "Mensual",
-    "duracion": 30,
-    "precio": 250,
+    "descripcion": "Acceso al gimnasio durante un mes con acceso unicamente a la sede donde se inscribio.",
+    "plazo": 1,
+    "precio": 130,
     "estado": "activa"
   },
   {
     "id": 2,
-    "nombre": "Trimestral",
-    "duracion": 90,
-    "precio": 650,
+    "nombre": "Plus",
+    "descripcion": "Acceso al gimnasio durante un año con acceso a todas las sedes dentro del Pais.",
+    "plazo": 12,
+    "precio": 2700,
     "estado": "activa"
   },
   {
     "id": 3,
     "nombre": "Anual",
-    "duracion": 365,
-    "precio": 2200,
+    "descripcion": "Acceso al gimnasio durante un año con acceso unciamente a la sede donde se inscribio.",
+    "plazo": 12,
+    "precio": 2400,
     "estado": "inactiva"
   }
 ]
