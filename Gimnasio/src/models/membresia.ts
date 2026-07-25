@@ -1,7 +1,7 @@
 import {EstadoHabilitacion} from "./estado";
 
 export interface Membresia{
-    idMembresia:number;
+    id:number;
     nombre:string;
     descripcion:string;
     plazo:number;
