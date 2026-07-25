@@ -1,15 +1,15 @@
 import {EstadoPersona} from "./estado";
 
 export interface Cliente{
-    idCliente:number;
+    id:number;
     idUsuario: number;
     idSede: number;
     idMembresia:number;
     nombre:string;
     apellido:string;
-    dpi:number;
-    telefono:number;
+    dpi:string;
+    telefono:string;
     correo:string;
-    fecha:Date;
+    fecha:string;
     estado:EstadoPersona;
 }
