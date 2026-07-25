@@ -57,8 +57,8 @@ export function validarDireccion(direccion: string): boolean {
 export function asignarEstadoPersona(estado: string): EstadoPersona {
     const valor = estado.trim().toLowerCase();
 
-    if (valor === "activo") return "Activo";
-    if (valor === "inactivo") return "Inactivo";
+    if (valor === "activo") return "activo";
+    if (valor === "inactivo") return "inactivo";
 
     throw new Error(
         "Estado incorrecto. Solo se permite: activo o inactivo"
@@ -87,15 +87,21 @@ export function asignarEstadoSeguimiento(estado: string): EstadoSeguimiento {
     );
 }
 
-export function validarFechaIngreso(fecha: Date): boolean {
-    const fechaMinima = new Date("2000-01-01");
-    const fechaActual = new Date();
+export function validarFechaIngreso(fecha: string): boolean {
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(fecha)) return false;
+
+    const [anio, mes, dia] = fecha.split("-").map(Number);
+    const fechaIngreso = new Date(anio, mes - 1, dia);
+
+    const fechaExiste =
+        fechaIngreso.getFullYear() === anio &&
+        fechaIngreso.getMonth() === mes - 1 &&
+        fechaIngreso.getDate() === dia;
 
     return (
-        fecha instanceof Date &&
-        !Number.isNaN(fecha.getTime()) &&
-        fecha >= fechaMinima &&
-        fecha <= fechaActual
+        fechaExiste &&
+        fechaIngreso >= new Date(2000, 0, 1) &&
+        fechaIngreso <= new Date()
     );
 }
 
@@ -105,12 +111,19 @@ export function validarUser(username: string): boolean {
 }
 
 export function validarContrasena(password: string): boolean {
-    return password.trim().length >= 8;
+    if (typeof password !== "string") return false;
+
+    return /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)\S{8,64}$/.test(password);
 }
 
 export function validarRol(rol: string): boolean {
+    if (typeof rol !== "string") return false;
+
     const valor = rol.trim().toLowerCase();
-    return Object.values(Rol).includes(valor as Rol);
+
+    return Object.values(Rol).some(
+        rolPermitido => rolPermitido.toLowerCase() === valor
+    );
 }
 
 export function asignarRol(tipo: string): Rol {
