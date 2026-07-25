@@ -1,8 +1,8 @@
 import {readFile, writeFile} from "fs/promises"
 import {Usuario} from "../models/usuario"
-import { validarContrasena, asignarEstadoPersona, validarFechaIngreso, validarId, validarIdNuevo, validarRol, validarUser } from "../utils/validaciones"
+import { validarContrasena, asignarEstadoPersona, validarFechaIngreso, validarId, validarIdNuevo, validarRol, validarUser, asignarRol } from "../utils/validaciones"
 
-const ruta = "./src/data/usuarios";
+const ruta = "./src/data/usuarios.json";
 
 async function leerUsuarios(): Promise<Usuario[]> {
     return JSON.parse(await readFile(ruta, "utf-8"));
@@ -12,24 +12,7 @@ async function guardarUsuarios(usuarios: Usuario[]): Promise<void> {
     await writeFile(ruta, JSON.stringify(usuarios, null, 2));
 }
 
-export async function listarUsuarios() {
-    return leerUsuarios(); 
-}
-
-export async function buscarUsuario(id: number){
-    if (!validarId(id))
-        throw new Error("ID inválido.");
-
-    const usuarios = await leerUsuarios();
-    return usuarios.find(usuario => usuario.id === id);
-}
-
-export async function agregarUsuario(usuario: Usuario) {
-    const usuarios = await leerUsuarios();
-
-    if (!validarIdNuevo(usuario.id, usuarios))
-        throw new Error("El ID ya existe.");
-
+function validarUsuario(usuario: Usuario): Usuario {
     if (!validarUser(usuario.username))
         throw new Error("Username inválido.");
 
@@ -39,54 +22,100 @@ export async function agregarUsuario(usuario: Usuario) {
     if (!validarRol(usuario.rol))
         throw new Error("Rol inválido.");
 
-    usuario.estado = asignarEstadoPersona(usuario.estado);
-
     if (!validarFechaIngreso(usuario.fechaIngreso))
-        throw new Error("Fecha inválida.");
+        throw new Error("Fecha de ingreso inválida.");
 
-    usuarios.push(usuario);
-
-    await guardarUsuarios(usuarios);
+    return {
+        ...usuario,
+        username: usuario.username.trim(),
+        rol: asignarRol(usuario.rol),
+        estado: asignarEstadoPersona(usuario.estado)
+    };
 }
 
-export async function actualizarUsuario(id: number, datos: Usuario){
+export async function listarUsuarios(): Promise<Usuario[]> {
+    return leerUsuarios(); 
+}
+
+export async function buscarUsuario(id: number): Promise<Usuario>{
+    if (!validarId(id))
+        throw new Error("ID inválido.");
+
     const usuarios = await leerUsuarios();
-    const posicion = usuarios.findIndex(usuario => usuario.id === id);
+    const usuario = usuarios.find(u => u.id === id);
 
-    if (posicion === -1)
-        throw new Error("Usuario no encontrado.");  
+    if (!usuario)
+        throw new Error("Usuario no encontrado.");
 
-     if (!validarIdNuevo(datos.id, usuarios))
+    return usuario;
+}
+
+export async function agregarUsuario(usuario: Usuario): Promise<Usuario> {
+    if (!validarId(usuario.id))
+    throw new Error("ID inválido.");
+
+    const usuarios = await leerUsuarios();
+
+    const idExiste = usuarios.some( m => m.id === usuario.id);
+
+    if (idExiste)
         throw new Error("El ID ya existe.");
 
-    if (!validarUser(datos.username))
-        throw new Error("Username inválido.");
+    const nuevoUsuario = validarUsuario(usuario);
 
-    if (!validarContrasena(datos.password))
-        throw new Error("Contraseña inválida.");
+    const usernameExiste = usuarios.some(
+        u => u.username.toLowerCase() === nuevoUsuario.username.toLowerCase()
+    );
 
-    if (!validarRol(datos.rol))
-        throw new Error("Rol inválido.");
+    if (usernameExiste)
+         throw new Error("Este User ya existe.");
 
-    datos.estado = asignarEstadoPersona(datos.estado);
-
-    if (!validarFechaIngreso(datos.fechaIngreso))
-        throw new Error("Fecha inválida.");
-
-
-    usuarios[posicion] = datos;
+    usuarios.push(nuevoUsuario);
     await guardarUsuarios(usuarios);
+
+    return nuevoUsuario;
 }
 
-export async function eliminarUsuario(id: number){
+export async function actualizarUsuario(id: number, datos: Usuario): Promise<Usuario> {
+    if (!validarId(id))
+        throw new Error("ID inválido.");
+
     const usuarios = await leerUsuarios();
-    const posicion = usuarios.findIndex(usuario => usuario.id === id);  
+    const posicion = usuarios.findIndex(u => u.id === id);
 
     if (posicion === -1)
         throw new Error("Usuario no encontrado.");
 
-    usuarios.splice(posicion, 1);
-    await guardarUsuarios(usuarios);
-    return true;
+    if (datos.id !== id)
+        throw new Error("No se puede modificar el ID del usuario.");
 
+    const usuarioActualizado = validarUsuario(datos);
+
+    const userExiste = usuarios.some(
+        (u, indice) => indice !== posicion && u.username.toLowerCase() === usuarioActualizado.username.toLowerCase()
+    );
+
+    if (userExiste)
+        throw new Error("Este User ya existe.");
+
+    usuarios[posicion] = usuarioActualizado;
+    await guardarUsuarios(usuarios);
+
+    return usuarioActualizado;
+}
+
+export async function eliminarUsuario(id: number): Promise<Usuario>{
+    if (!validarId(id))
+        throw new Error("ID inválido.");
+
+    const usuarios = await leerUsuarios();
+    const posicion = usuarios.findIndex(u => u.id === id);
+
+    if (posicion === -1)
+        throw new Error("Usuario no encontrado.");
+
+    const [usuarioEliminado] = usuarios.splice(posicion, 1);
+    await guardarUsuarios(usuarios);
+
+    return usuarioEliminado;
 } 
