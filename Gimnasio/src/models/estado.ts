@@ -1,4 +1,4 @@
-export type EstadoPersona = "Activo" | "Inactivo";
+export type EstadoPersona = "activo" | "inactivo";
 
 export type EstadoHabilitacion = "activa" | "inactiva";
 
