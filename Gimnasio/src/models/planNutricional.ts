@@ -1,7 +1,7 @@
 import {EstadoSeguimiento} from "./estado";
 
 export interface PlanNutricional{
-    idPlanNutricional:number;
+    id:number;
     idCliente:number;
     idEntrenador:number;
     objetivo:string;

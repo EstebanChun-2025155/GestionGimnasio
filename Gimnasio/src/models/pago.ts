@@ -2,11 +2,11 @@ import {MetodoPago} from "./metodoPago";
 import {EstadoPago} from "./estadoPago";
 
 export interface Pago{
-    idPago:number;
+    id:number;
     idCliente:number;
     idMembresia:number;
     monto:number;
-    fecha_pago:Date;
+    fechaPago:string;
     referencia:string;
     metodoPago:MetodoPago;
     estadoPago:EstadoPago;

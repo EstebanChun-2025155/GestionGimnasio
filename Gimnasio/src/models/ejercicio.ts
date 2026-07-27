@@ -1,5 +1,5 @@
 export interface Ejercicio{
-    idEjercicio:number;
+    id:number;
     idRutina:number;
     nombre:string;
     grupoMuscular:string;

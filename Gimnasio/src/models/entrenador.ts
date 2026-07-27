@@ -1,13 +1,13 @@
 import {EstadoPersona} from "./estado";
 
 export interface Entrenador{
-    idEntrenador:number;
+    id:number;
     idUsuario:number;
     idSede:number;
     nombre:string;
     apellido:string;
     dpi:string;
-    telefono:number;
+    telefono:string;
     especialidad:string;
     estado:EstadoPersona
 }

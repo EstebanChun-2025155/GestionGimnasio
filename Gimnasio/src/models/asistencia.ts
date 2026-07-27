@@ -1,8 +1,8 @@
 export interface Asistencia{
-    idAsistencia:number;
+    id:number;
     idCliente:number;
     idSede:number;
-    fecha:Date;
+    fecha:string;
     horaEntrada: string;
     horaSalida: string;
     observaciones:string;

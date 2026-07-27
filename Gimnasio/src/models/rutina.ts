@@ -1,7 +1,7 @@
 import {EstadoSeguimiento} from "./estado";
 
 export interface Rutina{
-    idRutina:number;
+    id:number;
     idCliente:number;
     idEntrenador:number;
     nombre:string;
