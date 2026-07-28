@@ -1,23 +1,32 @@
 [
   {
     "id": 1,
-    "nombre": "Sede Central",
-    "direccion": "Zona 1, Guatemala",
-    "telefono": "22334455",
-    "estado": "activa"
+    "idCliente": 1,
+    "idMembresia": 1,
+    "monto": 250,
+    "fechaPago": "2026-07-22",
+    "referencia": "REF-PAGO-0001",
+    "metodoPago": "tarjeta",
+    "estadoPago": "pagado"
   },
   {
     "id": 2,
-    "nombre": "Sede Norte",
-    "direccion": "Zona 18, Guatemala",
-    "telefono": "23445566",
-    "estado": "activa"
+    "idCliente": 2,
+    "idMembresia": 2,
+    "monto": 650,
+    "fechaPago": "2026-07-22",
+    "referencia": "REF-PAGO-0002",
+    "metodoPago": "transferencia",
+    "estadoPago": "pagado"
   },
   {
     "id": 3,
-    "nombre": "Sede Sur",
-    "direccion": "Villa Nueva",
-    "telefono": "24556677",
-    "estado": "inactiva"
+    "idCliente": 3,
+    "idMembresia": 3,
+    "monto": 2200,
+    "fechaPago": "2026-07-22",
+    "referencia": "REF-PAGO-0003",
+    "metodoPago": "tarjeta",
+    "estadoPago": "pagado"
   }
 ]
