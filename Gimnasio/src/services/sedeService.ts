@@ -2,7 +2,7 @@ import { readFile, writeFile } from "fs/promises";
 import { Sede } from "../models/sede";
 import { asignarEstadoHabilitacion, validarDireccion, validarId, validarNombre, validarTelefono} from "../utils/validaciones";
 
-const ruta = "./src/data/sedes.json";
+const ruta = "./src/data/sede.json";
 
 async function leerSedes(): Promise<Sede[]> {
     const contenido = await readFile(ruta, "utf-8");

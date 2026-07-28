@@ -2,7 +2,7 @@ import {readFile, writeFile} from "fs/promises"
 import {Usuario} from "../models/usuario"
 import { validarContrasena, asignarEstadoPersona, validarFechaIngreso, validarId, validarIdNuevo, validarRol, validarUser, asignarRol } from "../utils/validaciones"
 
-const ruta = "./src/data/usuarios.json";
+const ruta = "./src/data/usuario.json";
 
 async function leerUsuarios(): Promise<Usuario[]> {
     return JSON.parse(await readFile(ruta, "utf-8"));
