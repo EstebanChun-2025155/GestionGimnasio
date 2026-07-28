@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "nombre": "Carlos Pérez",
+    "dpi": 3012345678901,
+    "telefono": 51234567,
+    "correo": "carlos@gmail.com",
+    "direccion": "Zona 10, Guatemala",
+    "estado": "activo"
+  },
+  {
+    "id": 2,
+    "nombre": "María López",
+    "dpi": 3023456789012,
+    "telefono": 52345678,
+    "correo": "maria@hotmail.com",
+    "direccion": "Mixco",
+    "estado": "activo"
+  },
+  {
+    "id": 3,
+    "nombre": "José Ramírez",
+    "dpi": 3034567890123,
+    "telefono": 53456789,
+    "correo": "jose@gmail.com",
+    "direccion": "Villa Nueva",
+    "estado": "inactivo"
+  }
+]

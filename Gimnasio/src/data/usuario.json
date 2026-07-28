@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "username": "administrador",
+    "password": "Admin123",
+    "rol": "Admin",
+    "estado": "Activo",
+    "fechaIngreso": "2026-07-22"
+  },
+  {
+    "id": 2,
+    "username": "entrenador01",
+    "password": "Trainer123",
+    "rol": "Entrenador",
+    "estado": "Activo",
+    "fechaIngreso": "2026-07-22"
+  },
+  {
+    "id": 3,
+    "username": "cliente01",
+    "password": "Cliente123",
+    "rol": "Cliente",
+    "estado": "Inactivo",
+    "fechaIngreso": "2026-07-22"
+  }
+]

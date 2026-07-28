@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Mensual",
+    "descripcion": "Acceso al gimnasio durante un mes con acceso unicamente a la sede donde se inscribio.",
+    "plazo": 1,
+    "precio": 130,
+    "estado": "activa"
+  },
+  {
+    "id": 2,
+    "nombre": "Plus",
+    "descripcion": "Acceso al gimnasio durante un año con acceso a todas las sedes dentro del Pais.",
+    "plazo": 12,
+    "precio": 2700,
+    "estado": "activa"
+  },
+  {
+    "id": 3,
+    "nombre": "Anual",
+    "descripcion": "Acceso al gimnasio durante un año con acceso unciamente a la sede donde se inscribio.",
+    "plazo": 12,
+    "precio": 2400,
+    "estado": "inactiva"
+  }
+]

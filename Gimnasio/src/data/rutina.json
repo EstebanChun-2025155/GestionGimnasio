@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "idCliente": 1,
+    "nombre": "Rutina Fuerza",
+    "duracion": 8,
+    "estado": "activa"
+  },
+  {
+    "id": 2,
+    "idCliente": 2,
+    "nombre": "Rutina Cardio",
+    "duracion": 6,
+    "estado": "activa"
+  },
+  {
+    "id": 3,
+    "idCliente": 3,
+    "nombre": "Rutina Resistencia",
+    "duracion": 12,
+    "estado": "finalizada"
+  }
+]

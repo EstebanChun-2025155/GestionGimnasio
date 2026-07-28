@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nombre": "Luis Gómez",
+    "telefono": 54112233,
+    "correo": "luis@gmail.com",
+    "especialidad": "Musculación",
+    "estado": "activo"
+  },
+  {
+    "id": 2,
+    "nombre": "Ana Martínez",
+    "telefono": 55223344,
+    "correo": "ana@hotmail.com",
+    "especialidad": "Cardio",
+    "estado": "activo"
+  },
+  {
+    "id": 3,
+    "nombre": "Pedro Castillo",
+    "telefono": 56334455,
+    "correo": "pedro@gmail.com",
+    "especialidad": "Crossfit",
+    "estado": "inactivo"
+  }
+]
